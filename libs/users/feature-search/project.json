@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/users/feature-search",
+  "sourceRoot": "libs/users/feature-search/src",
+  "prefix": "abc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/users/feature-search"],
+      "options": {
+        "jestConfig": "libs/users/feature-search/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/users/feature-search/src/**/*.ts",
+          "libs/users/feature-search/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

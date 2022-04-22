@@ -1,0 +1,33 @@
+.list {
+  @apply flex;
+  @apply bg-white;
+  @apply shadow-sm;
+  @apply my-2;
+  @apply px-4;
+  @apply py-3;
+  @apply transition duration-500 ease-in-out;
+}
+
+.list:hover {
+  @apply shadow-md;
+  @apply cursor-pointer;
+}
+
+.list-item {
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+  @apply p-4;
+  @apply basis-1/3;
+  @apply border-dashed border-x border-y-0 border-zinc-400;
+  @apply relative;
+
+  .avatar {
+    @apply absolute left-10;
+  }
+
+  .list-item-action {
+    @apply m-2;
+    @apply p-2;
+  }
+}

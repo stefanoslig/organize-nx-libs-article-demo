@@ -1,0 +1,45 @@
+@import '@angular/cdk/overlay-prebuilt.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+.overlay-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+// Overlay panel styling
+.overlay-panel {
+  @apply flex;
+  @apply flex-col;
+  @apply bg-white;
+  @apply p-4;
+  @apply shadow-lg;
+  @apply border border-slate-200;
+}
+
+button {
+  @apply bg-transparent;
+  @apply hover:bg-purple-500;
+  @apply text-purple-700;
+  @apply font-semibold;
+  @apply hover:text-white;
+  @apply py-2 px-4;
+  @apply border border-purple-500 hover:border-transparent;
+  @apply rounded;
+}
+
+button:disabled {
+  @apply text-gray-700;
+  @apply border border-gray-500 hover:border-transparent;
+  @apply hover:bg-gray-50;
+}
+
+// removes the x icon from the search input
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}

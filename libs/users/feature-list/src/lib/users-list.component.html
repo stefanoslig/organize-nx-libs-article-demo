@@ -1,0 +1,20 @@
+<ul>
+  <li *ngFor="let user of users$ | async" class="list">
+    <div class="list-item list-item-name">
+      <abc-avatar class="avatar" [name]="user.name"></abc-avatar><span>{{ user.name }}</span>
+    </div>
+    <span class="list-item">{{ user.email }}</span>
+    <div class="list-item">
+      <button class="list-item-action" (click)="deleteUser(user.id)">
+        delete
+      </button>
+      <button
+        *ngIf="user.learnings.length > 0"
+        (click)="openAssignedLearnings(user.learnings)"
+        class="list-item-action"
+      >
+        assigned learnings
+      </button>
+    </div>
+  </li>
+</ul>

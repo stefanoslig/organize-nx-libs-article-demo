@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/learnings/feature-shell",
+  "sourceRoot": "libs/learnings/feature-shell/src",
+  "prefix": "abc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/learnings/feature-shell"],
+      "options": {
+        "jestConfig": "libs/learnings/feature-shell/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/learnings/feature-shell/src/**/*.ts",
+          "libs/learnings/feature-shell/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

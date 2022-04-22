@@ -1,0 +1,69 @@
+:host {
+  @apply self-center;
+  @apply relative;
+
+  input {
+    width: 50em;
+    @apply border border-l-blue-50 border-b-slate-400 rounded-sm;
+    @apply shadow-sm;
+    @apply h-14;
+    @apply p-1;
+    @apply transition duration-500 ease-in-out;
+    @apply text-base;
+    @apply cursor-text;
+
+    &:focus {
+      @apply outline-none;
+      @apply shadow-md;
+    }
+
+    @media screen and (max-width: 992px) {
+      width: 40em;
+    }
+
+    @media screen and (max-width: 750px) {
+      width: 25em;
+    }
+  }
+
+  .search-icon {
+    @apply outline-none;
+    background: url('../assets/search-blue.svg') no-repeat;
+    @apply w-4;
+    @apply bg-center;
+    @apply absolute;
+    @apply right-6;
+    @apply bottom-0;
+    @apply top-0;
+  }
+
+  .loader {
+    @apply absolute;
+    @apply right-12;
+    @apply bottom-0;
+    @apply top-2;
+    @apply border-2 border-b-indigo-400 rounded-full;
+    @apply w-10;
+    @apply h-10;
+    animation: spin 2s linear infinite;
+  }
+
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

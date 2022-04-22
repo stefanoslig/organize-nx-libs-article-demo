@@ -1,0 +1,19 @@
+:host {
+  @apply overflow-auto;
+
+  fieldset {
+    @apply flex;
+    @apply flex-col;
+    @apply mb-12;
+
+    input {
+      @apply border border-purple-400 rounded-sm;
+      @apply h-14;
+      @apply p-1;
+    }
+
+    .error {
+      @apply text-red-500;
+    }
+  }
+}

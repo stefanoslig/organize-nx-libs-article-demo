@@ -1,0 +1,42 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@abc/learnings/data-access": ["libs/learnings/data-access/src/index.ts"],
+      "@abc/learnings/feature-list": [
+        "libs/learnings/feature-list/src/index.ts"
+      ],
+      "@abc/learnings/feature-search": [
+        "libs/learnings/feature-search/src/index.ts"
+      ],
+      "@abc/learnings/feature-shell": [
+        "libs/learnings/feature-shell/src/index.ts"
+      ],
+      "@abc/learnings/utils-testing": [
+        "libs/learnings/utils-testing/src/index.ts"
+      ],
+      "@abc/shared/api-types": ["libs/shared/api-types/src/index.ts"],
+      "@abc/shared/data-access": ["libs/shared/data-access/src/index.ts"],
+      "@abc/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@abc/users/data-access": ["libs/users/data-access/src/index.ts"],
+      "@abc/users/feature-list": ["libs/users/feature-list/src/index.ts"],
+      "@abc/users/feature-search": ["libs/users/feature-search/src/index.ts"],
+      "@abc/users/feature-shell": ["libs/users/feature-shell/src/index.ts"],
+      "@abc/users/utils-testing": ["libs/users/utils-testing/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

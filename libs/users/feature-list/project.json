@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/users/feature-list",
+  "sourceRoot": "libs/users/feature-list/src",
+  "prefix": "abc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/users/feature-list"],
+      "options": {
+        "jestConfig": "libs/users/feature-list/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/users/feature-list/src/**/*.ts",
+          "libs/users/feature-list/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

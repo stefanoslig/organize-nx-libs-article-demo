@@ -1,0 +1,10 @@
+<div class="flex justify-between">
+  <h2 class="font-bold text-xl mb-2">Learnings</h2>
+  <button (click)="closeModal()">x</button>
+</div>
+
+<ul>
+  <li *ngFor="let learning of learnings" class="list">
+    <span class="list-item">{{ learning.name }}</span>
+  </li>
+</ul>

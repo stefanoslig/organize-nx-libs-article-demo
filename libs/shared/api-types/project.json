@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/api-types",
+  "sourceRoot": "libs/shared/api-types/src",
+  "prefix": "abc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/api-types"],
+      "options": {
+        "jestConfig": "libs/shared/api-types/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/api-types/src/**/*.ts",
+          "libs/shared/api-types/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

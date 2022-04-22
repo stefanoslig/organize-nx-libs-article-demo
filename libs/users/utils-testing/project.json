@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/users/utils-testing",
+  "sourceRoot": "libs/users/utils-testing/src",
+  "prefix": "abc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/users/utils-testing"],
+      "options": {
+        "jestConfig": "libs/users/utils-testing/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/users/utils-testing/src/**/*.ts",
+          "libs/users/utils-testing/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

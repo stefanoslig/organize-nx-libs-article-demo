@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/learnings/feature-search",
+  "sourceRoot": "libs/learnings/feature-search/src",
+  "prefix": "abc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/learnings/feature-search"],
+      "options": {
+        "jestConfig": "libs/learnings/feature-search/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/learnings/feature-search/src/**/*.ts",
+          "libs/learnings/feature-search/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

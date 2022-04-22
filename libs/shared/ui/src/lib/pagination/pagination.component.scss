@@ -1,0 +1,24 @@
+:host {
+  @apply flex;
+  @apply items-center;
+
+  .previous-page {
+    @apply mr-8;
+    @apply text-gray-600;
+    @apply text-2xl;
+    @apply cursor-pointer;
+    @apply hover:text-gray-800;
+  }
+
+  .next-page {
+    @apply ml-8;
+    @apply text-gray-600;
+    @apply text-2xl;
+    @apply cursor-pointer;
+    @apply hover:text-gray-800;
+  }
+
+  .page-info {
+    @apply text-gray-600;
+  }
+}

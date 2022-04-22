@@ -1,0 +1,28 @@
+{
+  "root": "apps/learning-webapp-e2e",
+  "sourceRoot": "apps/learning-webapp-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/learning-webapp-e2e/cypress.json",
+        "devServerTarget": "learning-webapp:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "learning-webapp:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/learning-webapp-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["learning-webapp"]
+}

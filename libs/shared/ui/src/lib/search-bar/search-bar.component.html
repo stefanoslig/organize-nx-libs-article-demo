@@ -1,0 +1,9 @@
+<input
+  type="search"
+  class="search"
+  (keyup.enter)="searchOnEnter($event)"
+  #searchField
+  placeholder="Search"
+/>
+<span class="search-icon"></span>
+<div [class.loader]="searching === true"></div>

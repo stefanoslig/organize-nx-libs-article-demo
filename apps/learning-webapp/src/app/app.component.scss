@@ -1,0 +1,31 @@
+header {
+  @apply flex;
+  @apply justify-between;
+  @apply items-center;
+  @apply m-12;
+
+  .title {
+    @apply bg-gradient-to-r from-purple-400 to-blue-600;
+    @apply bg-clip-text;
+    -webkit-text-fill-color: transparent;
+    @apply text-5xl;
+    @apply max-w-md;
+    @apply font-semibold;
+    @apply leading-tight;
+    @apply pr-4;
+  }
+
+  .logo {
+    @apply h-24;
+  }
+
+  .nav-link {
+    @apply text-blue-500;
+    @apply hover:text-blue-700;
+    @apply text-xl;
+
+    &.active {
+      @apply border-b-2 border-solid border-blue-500;
+    }
+  }
+}

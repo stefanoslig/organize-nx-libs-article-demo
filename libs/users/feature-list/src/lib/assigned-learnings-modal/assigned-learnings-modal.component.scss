@@ -1,0 +1,15 @@
+:host {
+  @apply overflow-auto;
+
+  .list {
+    @apply flex;
+    @apply bg-white;
+    @apply shadow-sm;
+    @apply my-2;
+    @apply px-4;
+    @apply py-3;
+    @apply caret-indigo-900;
+    @apply transition duration-500 ease-in-out;
+    @apply basis-2/3;
+  }
+}

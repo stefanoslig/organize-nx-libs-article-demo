@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/learnings/utils-testing",
+  "sourceRoot": "libs/learnings/utils-testing/src",
+  "prefix": "abc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/learnings/utils-testing"],
+      "options": {
+        "jestConfig": "libs/learnings/utils-testing/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/learnings/utils-testing/src/**/*.ts",
+          "libs/learnings/utils-testing/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

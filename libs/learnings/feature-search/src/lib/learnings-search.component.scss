@@ -1,0 +1,10 @@
+:host {
+  @apply flex;
+  @apply my-5;
+  @apply mx-10;
+  @apply justify-center;
+
+  .search {
+    @apply mr-12;
+  }
+}
