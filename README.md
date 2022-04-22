@@ -1,4 +1,4 @@
-# Abc
+# Organize nx libs article demo
 
 ![users page](./screenshots/users.png)
 
