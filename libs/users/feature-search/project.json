@@ -1,26 +1,20 @@
 {
+  "name": "abc-users-feature-search",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/users/feature-search",
   "sourceRoot": "libs/users/feature-search/src",
   "prefix": "abc",
+  "tags": [],
   "targets": {
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/users/feature-search"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/users/feature-search"],
       "options": {
-        "jestConfig": "libs/users/feature-search/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "libs/users/feature-search/jest.config.js"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/users/feature-search/src/**/*.ts",
-          "libs/users/feature-search/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     }
-  },
-  "tags": []
+  }
 }

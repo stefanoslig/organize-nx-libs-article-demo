@@ -1,30 +1,23 @@
-import {
-  Component,
-  NgModule,
-  ChangeDetectionStrategy,
-  Inject,
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { PAGINATION_PARAMS, SearchBarModule } from '@abc/shared/ui';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { PAGINATION_PARAMS, SearchBarComponent } from '@abc/shared/ui';
 import { LearningsStoreService } from '@abc/learnings/data-access';
 import { Router } from '@angular/router';
 import { PaginationParams } from '@abc/shared/api-types';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'abc-learnings-search',
   templateUrl: './learnings-search.component.html',
   styleUrls: ['./learnings-search.component.scss'],
+  imports: [SearchBarComponent, AsyncPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LearningsSearchComponent {
-  searching$ = this.learningsStoreService.searching$;
+  private readonly learningsStoreService = inject(LearningsStoreService);
+  private readonly router = inject(Router);
+  private readonly paginationParams = inject<PaginationParams>(PAGINATION_PARAMS);
 
-  constructor(
-    private readonly learningsStoreService: LearningsStoreService,
-    private readonly router: Router,
-    @Inject(PAGINATION_PARAMS)
-    private readonly paginationParams: PaginationParams
-  ) {}
+  searching$ = this.learningsStoreService.searching$;
 
   onSearch(query: string) {
     // We reset the page params
@@ -38,10 +31,3 @@ export class LearningsSearchComponent {
     this.learningsStoreService.fetchLearnings(this.paginationParams);
   }
 }
-
-@NgModule({
-  imports: [CommonModule, SearchBarModule],
-  declarations: [LearningsSearchComponent],
-  exports: [LearningsSearchComponent],
-})
-export class LearningsSearchComponentModule {}

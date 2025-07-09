@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
   Component,
   ChangeDetectionStrategy,
@@ -9,10 +8,9 @@ import {
   Output,
   EventEmitter,
   Input,
-  NgModule,
 } from '@angular/core';
 import { fromEvent, Subject } from 'rxjs';
-import { map, takeUntil, tap, debounceTime, filter } from 'rxjs/operators';
+import { map, takeUntil, tap, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'abc-search-bar',
@@ -51,10 +49,3 @@ export class SearchBarComponent implements AfterViewInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 }
-
-@NgModule({
-  imports: [CommonModule],
-  declarations: [SearchBarComponent],
-  exports: [SearchBarComponent],
-})
-export class SearchBarModule {}

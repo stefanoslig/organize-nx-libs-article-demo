@@ -1,34 +1,29 @@
-import {
-  Component,
-  OnInit,
-  NgModule,
-  ChangeDetectionStrategy,
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, ChangeDetectionStrategy, inject } from '@angular/core';
 import { LearningsStoreService } from '@abc/learnings/data-access';
-import {
-  DropdownComponentModule,
-  DropdownTriggerDirectiveModule,
-  PaginationModule,
-} from '@abc/shared/ui';
 import { UsersStoreService } from '@abc/users/data-access';
 import { PaginationParams } from '@abc/shared/api-types';
+import { DropdownComponent, DropdownTriggerDirective, PaginationComponent } from '@abc/shared/ui';
+import { AsyncPipe, NgClass } from '@angular/common';
 
 @Component({
   selector: 'abc-learnings-list',
   templateUrl: './learnings-list.component.html',
   styleUrls: ['./learnings-list.component.scss'],
+  imports: [
+        AsyncPipe, NgClass,
+        DropdownComponent,
+        PaginationComponent,
+        DropdownTriggerDirective
+            ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LearningsListComponent implements OnInit {
+  private readonly learningsStoreService = inject(LearningsStoreService);
+  private readonly usersStoreService = inject(UsersStoreService);
+
   learnings$ = this.learningsStoreService.learnings$;
   users$ = this.usersStoreService.users$;
   paginationTotalCount$ = this.learningsStoreService.paginationTotalCount$;
-
-  constructor(
-    private readonly learningsStoreService: LearningsStoreService,
-    private readonly usersStoreService: UsersStoreService
-  ) {}
 
   ngOnInit() {
     this.usersStoreService.fetchUsers();
@@ -47,14 +42,3 @@ export class LearningsListComponent implements OnInit {
   }
 }
 
-@NgModule({
-  imports: [
-    CommonModule,
-    DropdownTriggerDirectiveModule,
-    DropdownComponentModule,
-    PaginationModule,
-  ],
-  declarations: [LearningsListComponent],
-  exports: [LearningsListComponent],
-})
-export class LearningsListComponentModule {}

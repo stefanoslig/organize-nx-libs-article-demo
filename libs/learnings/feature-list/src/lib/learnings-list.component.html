@@ -1,31 +1,33 @@
-<abc-pagination
-  (pageChanged)="onPageChanged($event)"
+<abc-pagination (pageChanged)="onPageChanged($event)"
   [paginationTotalCount]="(paginationTotalCount$ | async) ?? 0"
-></abc-pagination>
+ />
 
 <ul>
-  <li *ngFor="let learning of learnings$ | async" class="list">
-    <span class="list-item">{{ learning.name }}</span>
-    <span class="list-item">{{ learning.status }}</span>
-    <div class="list-item">
-      <button class="list-item-action" (click)="deleteLearning(learning.id)">
-        delete
-      </button>
-      <button class="list-item-action" [abcDropdownTrigger]="dropdown">
-        assign to
-      </button>
-    </div>
-
-    <abc-dropdown #dropdown>
-      <ul>
-        <li *ngFor="let user of users$ | async" class="list-item-dropdown">
-          <span
-            (click)="assignLearning(learning.id, user.id)"
-            [ngClass]="user.id === learning.userId ? 'selected' : ''"
-            >{{ user.name }}</span
-          >
-        </li>
-      </ul>
-    </abc-dropdown>
-  </li>
-</ul>
+  @for (learning of learnings$ | async; track learning) {
+    <li class="list">
+      <span class="list-item">{{ learning.name }}</span>
+      <span class="list-item">{{ learning.status }}</span>
+      <div class="list-item">
+        <button class="list-item-action" (click)="deleteLearning(learning.id)">
+          delete
+        </button>
+        <button class="list-item-action" [abcDropdownTrigger]="dropdown">
+          assign to
+        </button>
+      </div>
+      <abc-dropdown #dropdown>
+        <ul>
+          @for (user of users$ | async; track user) {
+            <li class="list-item-dropdown">
+              <span
+                (click)="assignLearning(learning.id, user.id)"
+                [ngClass]="user.id === learning.userId ? 'selected' : ''"
+                >{{ user.name }}</span
+                >
+              </li>
+            }
+          </ul>
+        </abc-dropdown>
+      </li>
+    }
+  </ul>

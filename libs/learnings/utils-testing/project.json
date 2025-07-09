@@ -1,26 +1,20 @@
 {
+  "name": "abc-learnings-utils-testing",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/learnings/utils-testing",
   "sourceRoot": "libs/learnings/utils-testing/src",
   "prefix": "abc",
+  "tags": [],
   "targets": {
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/learnings/utils-testing"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/learnings/utils-testing"],
       "options": {
-        "jestConfig": "libs/learnings/utils-testing/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "libs/learnings/utils-testing/jest.config.js"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/learnings/utils-testing/src/**/*.ts",
-          "libs/learnings/utils-testing/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     }
-  },
-  "tags": []
+  }
 }

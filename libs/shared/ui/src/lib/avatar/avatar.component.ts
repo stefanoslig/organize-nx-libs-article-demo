@@ -1,9 +1,7 @@
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   Input,
-  NgModule,
 } from '@angular/core';
 
 @Component({
@@ -17,9 +15,3 @@ export class AvatarComponent {
   @Input() size: 'small' | 'regular' | 'large' | 'extra-large' = 'regular';
 }
 
-@NgModule({
-  declarations: [AvatarComponent],
-  exports: [AvatarComponent],
-  imports: [CommonModule],
-})
-export class AvatarComponentModule {}

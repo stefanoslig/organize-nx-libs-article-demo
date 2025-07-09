@@ -1,22 +1,12 @@
-import { Component, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LearningsListComponentModule } from '@abc/learnings/feature-list';
-import { LearningsSearchComponentModule } from '@abc/learnings/feature-search';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {LearningsSearchComponent} from '@abc/learnings/feature-search';
+import {LearningsListComponent} from '@abc/learnings/feature-list';
 
 @Component({
   selector: 'abc-learnings-shell',
   templateUrl: './learnings-shell.component.html',
   styleUrls: ['./learnings-shell.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [LearningsSearchComponent,LearningsListComponent ]
 })
 export class LearningsShellComponent {}
-
-@NgModule({
-  imports: [
-    CommonModule,
-    LearningsListComponentModule,
-    LearningsSearchComponentModule,
-  ],
-  declarations: [LearningsShellComponent],
-  exports: [LearningsShellComponent],
-})
-export class UsersShellComponentModule {}

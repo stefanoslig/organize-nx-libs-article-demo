@@ -1,26 +1,20 @@
 {
+  "name": "abc-learnings-feature-shell",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/learnings/feature-shell",
   "sourceRoot": "libs/learnings/feature-shell/src",
   "prefix": "abc",
+  "tags": [],
   "targets": {
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/learnings/feature-shell"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/learnings/feature-shell"],
       "options": {
-        "jestConfig": "libs/learnings/feature-shell/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "libs/learnings/feature-shell/jest.config.js"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/learnings/feature-shell/src/**/*.ts",
-          "libs/learnings/feature-shell/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     }
-  },
-  "tags": []
+  }
 }

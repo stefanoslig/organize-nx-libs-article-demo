@@ -4,7 +4,9 @@
 </div>
 
 <ul>
-  <li *ngFor="let learning of learnings" class="list">
-    <span class="list-item">{{ learning.name }}</span>
-  </li>
+  @for (learning of learnings; track learning) {
+    <li class="list">
+      <span class="list-item">{{ learning.name }}</span>
+    </li>
+  }
 </ul>

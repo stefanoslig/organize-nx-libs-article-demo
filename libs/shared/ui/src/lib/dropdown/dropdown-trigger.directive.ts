@@ -1,15 +1,5 @@
-import {
-  Directive,
-  ElementRef,
-  EventEmitter,
-  HostListener,
-  Input,
-  NgModule,
-  TemplateRef,
-  ViewContainerRef,
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Overlay, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
+import { Directive, ElementRef, EventEmitter, HostListener, Input, TemplateRef, ViewContainerRef, inject } from '@angular/core';
+import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { merge, take } from 'rxjs';
 import { TemplatePortal } from '@angular/cdk/portal';
 
@@ -20,8 +10,13 @@ class DropdownPanel {
 
 @Directive({
   selector: '[abcDropdownTrigger]',
+  
 })
 export class DropdownTriggerDirective {
+  private readonly overlay = inject(Overlay);
+  private elementRef = inject<ElementRef<HTMLElement>>(ElementRef);
+  private viewContainerRef = inject(ViewContainerRef);
+
   private _isDropdownOpen = false;
   private _overlayRef!: OverlayRef;
 
@@ -30,12 +25,6 @@ export class DropdownTriggerDirective {
   onClick() {
     this._isDropdownOpen ? this.close() : this.open();
   }
-
-  constructor(
-    private readonly overlay: Overlay,
-    private elementRef: ElementRef<HTMLElement>,
-    private viewContainerRef: ViewContainerRef
-  ) {}
 
   open() {
     const positionStrategy = this.overlay
@@ -76,9 +65,3 @@ export class DropdownTriggerDirective {
   }
 }
 
-@NgModule({
-  imports: [CommonModule, OverlayModule],
-  declarations: [DropdownTriggerDirective],
-  exports: [DropdownTriggerDirective],
-})
-export class DropdownTriggerDirectiveModule {}

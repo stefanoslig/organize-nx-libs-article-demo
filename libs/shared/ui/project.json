@@ -1,26 +1,20 @@
 {
+  "name": "abc-shared-ui",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/shared/ui",
   "sourceRoot": "libs/shared/ui/src",
   "prefix": "abc",
+  "tags": [],
   "targets": {
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shared/ui"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/shared/ui"],
       "options": {
-        "jestConfig": "libs/shared/ui/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "libs/shared/ui/jest.config.js"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/shared/ui/src/**/*.ts",
-          "libs/shared/ui/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     }
-  },
-  "tags": []
+  }
 }

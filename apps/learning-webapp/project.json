@@ -1,8 +1,10 @@
 {
+  "name": "learning-webapp",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/learning-webapp",
   "sourceRoot": "apps/learning-webapp/src",
   "prefix": "abc",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -58,10 +60,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "learning-webapp:build:production"
+          "buildTarget": "learning-webapp:build:production"
         },
         "development": {
-          "browserTarget": "learning-webapp:build:development"
+          "buildTarget": "learning-webapp:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -69,26 +71,18 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "learning-webapp:build"
+        "buildTarget": "learning-webapp:build"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/learning-webapp/src/**/*.ts",
-          "apps/learning-webapp/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/learning-webapp"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/learning-webapp"],
       "options": {
-        "jestConfig": "apps/learning-webapp/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "apps/learning-webapp/jest.config.js"
       }
     }
-  },
-  "tags": []
+  }
 }

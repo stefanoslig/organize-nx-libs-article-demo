@@ -1,29 +1,28 @@
-import { Component, NgModule, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { UsersStoreService } from '@abc/users/data-access';
-import { ModalRef, ModalService, SearchBarModule } from '@abc/shared/ui';
+import { ModalRef, ModalService, SearchBarComponent } from '@abc/shared/ui';
 import {
   AddUserModalComponent,
   ModalData,
 } from './add-user-modal/add-user-modal.component';
 import { User } from '@abc/shared/api-types';
 import { filter, take } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'abc-users-search',
   templateUrl: './users-search.component.html',
   styleUrls: ['./users-search.component.scss'],
+  imports: [AsyncPipe, SearchBarComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersSearchComponent {
+  private readonly usersStoreService = inject(UsersStoreService);
+  private readonly modalService = inject(ModalService);
+
   searching$ = this.usersStoreService.searching$;
 
   private _modalRef!: ModalRef;
-
-  constructor(
-    private readonly usersStoreService: UsersStoreService,
-    private readonly modalService: ModalService
-  ) {}
 
   onSearch(query: string) {
     if (!query) {
@@ -50,10 +49,3 @@ export class UsersSearchComponent {
       );
   }
 }
-
-@NgModule({
-  imports: [CommonModule, SearchBarModule],
-  declarations: [UsersSearchComponent],
-  exports: [UsersSearchComponent],
-})
-export class UsersSearchComponentModule {}

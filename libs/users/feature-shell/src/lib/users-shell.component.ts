@@ -1,18 +1,12 @@
-import { Component, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { UsersListComponentModule } from '@abc/users/feature-list';
-import { UsersSearchComponentModule } from '@abc/users/feature-search';
+import { UsersListComponent } from '@abc/users/feature-list';
+import { UsersSearchComponent } from '@abc/users/feature-search';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'abc-users-shell',
   templateUrl: './users-shell.component.html',
   styleUrls: ['./users-shell.component.scss'],
+  imports: [UsersSearchComponent, UsersListComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersShellComponent {}
-
-@NgModule({
-  imports: [CommonModule, UsersSearchComponentModule, UsersListComponentModule],
-  declarations: [UsersShellComponent],
-  exports: [UsersShellComponent],
-})
-export class UsersShellComponentModule {}

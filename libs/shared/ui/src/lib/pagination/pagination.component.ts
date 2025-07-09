@@ -1,15 +1,5 @@
 import { PaginationParams } from '@abc/shared/api-types';
-import { CommonModule } from '@angular/common';
-import {
-  Component,
-  ChangeDetectionStrategy,
-  NgModule,
-  Output,
-  EventEmitter,
-  OnInit,
-  Input,
-  Inject,
-} from '@angular/core';
+import { Component, ChangeDetectionStrategy, Output, EventEmitter, OnInit, Input, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, Subject, takeUntil, tap } from 'rxjs';
 import { PAGINATION_PARAMS } from './pagination.token';
@@ -21,6 +11,10 @@ import { PAGINATION_PARAMS } from './pagination.token';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PaginationComponent implements OnInit {
+  private readonly paginationParams = inject<PaginationParams>(PAGINATION_PARAMS);
+  private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
+
   @Output() pageChanged = new EventEmitter<PaginationParams>();
   @Input() paginationTotalCount!: number;
 
@@ -28,13 +22,6 @@ export class PaginationComponent implements OnInit {
   limit = this.paginationParams.limit;
 
   private unsubscribe$ = new Subject<void>();
-
-  constructor(
-    @Inject(PAGINATION_PARAMS)
-    private readonly paginationParams: PaginationParams,
-    private readonly route: ActivatedRoute,
-    private readonly router: Router
-  ) {}
 
   ngOnInit() {
     this.subscribeToRouteParams();
@@ -69,10 +56,3 @@ export class PaginationComponent implements OnInit {
       .subscribe();
   }
 }
-
-@NgModule({
-  imports: [CommonModule],
-  declarations: [PaginationComponent],
-  exports: [PaginationComponent],
-})
-export class PaginationModule {}

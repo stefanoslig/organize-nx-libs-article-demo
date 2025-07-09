@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User, UserEmbedLeanings } from '@abc/shared/api-types';
@@ -8,10 +8,9 @@ import { API_URL } from '@abc/shared/data-access';
   providedIn: 'root',
 })
 export class UsersApiService {
-  constructor(
-    private readonly http: HttpClient,
-    @Inject(API_URL) private readonly apiUrl: string
-  ) {}
+  private readonly http = inject(HttpClient);
+  private readonly apiUrl = inject(API_URL);
+
 
   fetchUsers(): Observable<Array<UserEmbedLeanings>> {
     const params = new HttpParams().set('_embed', 'learnings');

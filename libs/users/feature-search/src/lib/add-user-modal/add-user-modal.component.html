@@ -6,11 +6,15 @@
   <fieldset>
     <label for="name">Name: </label>
     <input id="name" type="text" formControlName="name" />
-    <span class="error" *ngIf="name.invalid">The name is required</span>
+    @if (name.invalid) {
+      <span class="error">The name is required</span>
+    }
 
     <label for="email">Email: </label>
     <input id="email" type="text" formControlName="email" />
-    <span class="error" *ngIf="email.invalid">The email is required</span>
+    @if (email.invalid) {
+      <span class="error">The email is required</span>
+    }
   </fieldset>
 
   <button type="submit" [disabled]="!userForm.valid">Submit</button>

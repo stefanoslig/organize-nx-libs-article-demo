@@ -11,7 +11,7 @@ const database: { users: Array<User>; learnings: Array<Learning> } = {
 
 const hasAssignedUser = (): boolean => {
   // 10% chance not to have an assigned user
-  return Math.floor(Math.random() * 11) <= 9 ?? false;
+  return Math.floor(Math.random() * 11) <= 9;
 };
 
 for (let i = 1; i <= USERS_ROWS_NUMBER; i++) {

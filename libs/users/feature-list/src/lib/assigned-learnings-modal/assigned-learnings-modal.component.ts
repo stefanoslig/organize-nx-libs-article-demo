@@ -1,10 +1,5 @@
-import {
-  Component,
-  NgModule,
-  ChangeDetectionStrategy,
-  Inject,
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+
 import { ModalRef, MODAL_DATA } from '@abc/shared/ui';
 import { Learning } from '@abc/shared/api-types';
 
@@ -12,24 +7,16 @@ import { Learning } from '@abc/shared/api-types';
   selector: 'abc-assigned-learnings-modal',
   templateUrl: './assigned-learnings-modal.component.html',
   styleUrls: ['./assigned-learnings-modal.component.scss'],
+  imports: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AssignedLearningsModalComponent {
-  learnings = this.modalData;
+  private readonly modalData = inject<Array<Learning>>(MODAL_DATA);
+  private readonly modalRef = inject(ModalRef);
 
-  constructor(
-    @Inject(MODAL_DATA) private readonly modalData: Array<Learning>,
-    private readonly modalRef: ModalRef
-  ) {}
+  learnings = this.modalData;
 
   closeModal() {
     this.modalRef.close();
   }
 }
-
-@NgModule({
-  imports: [CommonModule],
-  declarations: [AssignedLearningsModalComponent],
-  exports: [AssignedLearningsModalComponent],
-})
-export class AssignedLearningsModalComponentModule {}

@@ -1,12 +1,7 @@
-import {
-  Component,
-  OnInit,
-  NgModule,
-  ChangeDetectionStrategy,
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, ChangeDetectionStrategy, inject } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
 import { UsersStoreService } from '@abc/users/data-access';
-import { AvatarComponentModule, ModalService } from '@abc/shared/ui';
+import { AvatarComponent, ModalService } from '@abc/shared/ui';
 import { AssignedLearningsModalComponent } from './assigned-learnings-modal/assigned-learnings-modal.component';
 import { Learning } from '@abc/shared/api-types';
 
@@ -14,15 +9,14 @@ import { Learning } from '@abc/shared/api-types';
   selector: 'abc-users-list',
   templateUrl: './users-list.component.html',
   styleUrls: ['./users-list.component.scss'],
+  imports: [AsyncPipe, AvatarComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent implements OnInit {
-  users$ = this.usersStoreService.users$;
+  private readonly usersStoreService = inject(UsersStoreService);
+  private readonly modalService = inject(ModalService);
 
-  constructor(
-    private readonly usersStoreService: UsersStoreService,
-    private readonly modalService: ModalService
-  ) {}
+  users$ = this.usersStoreService.users$;
 
   ngOnInit() {
     this.usersStoreService.fetchUsers();
@@ -36,10 +30,3 @@ export class UsersListComponent implements OnInit {
     this.usersStoreService.deleteUser(id);
   }
 }
-
-@NgModule({
-  imports: [CommonModule, AvatarComponentModule],
-  declarations: [UsersListComponent],
-  exports: [UsersListComponent],
-})
-export class UsersListComponentModule {}

@@ -1,26 +1,20 @@
 {
+  "name": "abc-users-utils-testing",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/users/utils-testing",
   "sourceRoot": "libs/users/utils-testing/src",
   "prefix": "abc",
+  "tags": [],
   "targets": {
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/users/utils-testing"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/users/utils-testing"],
       "options": {
-        "jestConfig": "libs/users/utils-testing/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "libs/users/utils-testing/jest.config.js"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/users/utils-testing/src/**/*.ts",
-          "libs/users/utils-testing/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     }
-  },
-  "tags": []
+  }
 }

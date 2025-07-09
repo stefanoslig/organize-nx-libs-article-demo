@@ -1,26 +1,20 @@
 {
+  "name": "abc-users-feature-shell",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/users/feature-shell",
   "sourceRoot": "libs/users/feature-shell/src",
   "prefix": "abc",
+  "tags": [],
   "targets": {
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/users/feature-shell"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/users/feature-shell"],
       "options": {
-        "jestConfig": "libs/users/feature-shell/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "libs/users/feature-shell/jest.config.js"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/users/feature-shell/src/**/*.ts",
-          "libs/users/feature-shell/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     }
-  },
-  "tags": []
+  }
 }

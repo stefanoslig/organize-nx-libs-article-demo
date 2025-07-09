@@ -1,10 +1,5 @@
-import {
-  Component,
-  NgModule,
-  ChangeDetectionStrategy,
-  OnInit,
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, OnInit, inject } from '@angular/core';
+
 import { ModalRef } from '@abc/shared/ui';
 import {
   FormBuilder,
@@ -23,15 +18,14 @@ export interface ModalData {
   selector: 'abc-add-user',
   templateUrl: './add-user-modal.component.html',
   styleUrls: ['./add-user-modal.component.scss'],
+  imports: [ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AddUserModalComponent implements OnInit {
-  userForm!: FormGroup;
+  private readonly modalRef = inject(ModalRef);
+  private readonly fb = inject(FormBuilder);
 
-  constructor(
-    private readonly modalRef: ModalRef,
-    private readonly fb: FormBuilder
-  ) {}
+  userForm!: FormGroup;
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
@@ -58,10 +52,3 @@ export class AddUserModalComponent implements OnInit {
     return this.userForm.controls['email'] as FormControl;
   }
 }
-
-@NgModule({
-  imports: [CommonModule, ReactiveFormsModule],
-  declarations: [AddUserModalComponent],
-  exports: [AddUserModalComponent],
-})
-export class AddUserModalComponentModule {}

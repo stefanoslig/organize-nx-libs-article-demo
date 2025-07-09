@@ -1,4 +1,4 @@
-import { Injectable, Injector } from '@angular/core';
+import { Injectable, Injector, inject } from '@angular/core';
 import { ComponentType, Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { MODAL_DATA } from '../tokens/modal.token';
@@ -9,12 +9,10 @@ import { ModalRef } from './modal-ref';
   providedIn: 'root',
 })
 export class ModalService {
-  private _overlayRef!: OverlayRef;
+  private readonly overlay = inject(Overlay);
+  private readonly injector = inject(Injector);
 
-  constructor(
-    private readonly overlay: Overlay,
-    private readonly injector: Injector
-  ) {}
+  private _overlayRef!: OverlayRef;
 
   /**
    * Opens the modal.

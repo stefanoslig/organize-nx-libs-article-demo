@@ -1,9 +1,6 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Route } from '@angular/router';
 
-@NgModule({
-  imports: [
-    RouterModule.forRoot([
+export const appRoutes: Route[] = [
       {
         path: '',
         redirectTo: 'users',
@@ -13,17 +10,15 @@ import { RouterModule } from '@angular/router';
         path: 'users',
         loadChildren: () =>
           import('@abc/users/feature-shell').then(
-            (m) => m.UsersFeatureShellModule
+            (m) => m.UsersRoutes
           ),
       },
       {
         path: 'learnings',
         loadChildren: () =>
           import('@abc/learnings/feature-shell').then(
-            (m) => m.LearningsFeatureShellModule
+            (m) => m.LearningsRoutes
           ),
       },
-    ]),
-  ],
-})
-export class AppRoutingModule {}
+    ]
+  

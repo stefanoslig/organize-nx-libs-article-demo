@@ -1,6 +1,5 @@
-<abc-search-bar
-  class="search"
+<abc-search-bar class="search"
   [searching]="(searching$ | async) ?? false"
   (search)="onSearch($event)"
   (resetSearch)="onResetSearch()"
-></abc-search-bar>
+ />

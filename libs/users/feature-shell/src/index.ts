@@ -1,1 +1,1 @@
-export * from './lib/users-feature-shell.module';
+export * from './lib/users-feature-shell.routes';

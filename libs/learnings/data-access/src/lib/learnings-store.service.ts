@@ -1,6 +1,6 @@
 import { Learning, PaginationParams } from '@abc/shared/api-types';
 import { Store } from '@abc/shared/data-access';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs';
 import { LearningsApiService } from './learnings-api.service';
 
@@ -20,13 +20,15 @@ const initialState: LearningsState = {
   providedIn: 'root',
 })
 export class LearningsStoreService extends Store<LearningsState> {
+  private learningsApiService = inject(LearningsApiService);
+
   learnings$ = this.state$.pipe(map((state) => state.learnings));
   searching$ = this.state$.pipe(map((state) => state.searching));
   paginationTotalCount$ = this.state$.pipe(
     map((state) => state.paginationTotalCount)
   );
 
-  constructor(private learningsApiService: LearningsApiService) {
+  constructor() {
     super(initialState);
   }
 

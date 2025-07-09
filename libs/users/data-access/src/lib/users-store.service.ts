@@ -1,6 +1,6 @@
 import { User, UserEmbedLeanings } from '@abc/shared/api-types';
 import { Store } from '@abc/shared/data-access';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs';
 import { UsersApiService } from './users-api.service';
 
@@ -15,10 +15,12 @@ const initialState: UsersState = { users: [], searching: false };
   providedIn: 'root',
 })
 export class UsersStoreService extends Store<UsersState> {
+  private usersApiService = inject(UsersApiService);
+
   users$ = this.state$.pipe(map((state) => state.users));
   searching$ = this.state$.pipe(map((state) => state.searching));
 
-  constructor(private usersApiService: UsersApiService) {
+  constructor() {
     super(initialState);
   }
 

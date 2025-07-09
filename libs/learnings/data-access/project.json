@@ -1,26 +1,20 @@
 {
+  "name": "data-access",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/learnings/data-access",
   "sourceRoot": "libs/learnings/data-access/src",
   "prefix": "abc",
+  "tags": [],
   "targets": {
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/learnings/data-access"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/learnings/data-access"],
       "options": {
-        "jestConfig": "libs/learnings/data-access/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "libs/learnings/data-access/jest.config.js"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/learnings/data-access/src/**/*.ts",
-          "libs/learnings/data-access/src/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     }
-  },
-  "tags": []
+  }
 }
