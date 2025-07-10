@@ -9,7 +9,7 @@
     "build": "nx build",
     "test": "nx test",
     "server": "npx json-server --watch db.json --port 3000",
-    "generate-data": "npx ts-node generate-fake-data.ts > db.json"
+    "generate-data": "npx tsx generate-fake-data.ts > db.json"
   },
   "private": true,
   "dependencies": {

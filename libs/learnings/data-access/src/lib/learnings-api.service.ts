@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Learning, PaginationParams } from '@abc/shared/api-types';
+import { Learning, LearningResponse, PaginationParams } from '@abc/shared/api-types';
 import { API_URL } from '@abc/shared/data-access';
 
 @Injectable({
@@ -14,12 +14,12 @@ export class LearningsApiService {
 
   fetchLearnings(
     paginationParams: PaginationParams
-  ): Observable<HttpResponse<Array<Learning>>> {
+  ): Observable<HttpResponse<LearningResponse>> {
     const params = new HttpParams()
       .set('_page', paginationParams.page)
-      .set('_limit', paginationParams.limit);
+      .set('_per_page', paginationParams.limit);
 
-    return this.http.get<Array<Learning>>(`${this.apiUrl}/learnings`, {
+    return this.http.get<LearningResponse>(`${this.apiUrl}/learnings`, {
       observe: 'response',
       params,
     });
@@ -28,13 +28,13 @@ export class LearningsApiService {
   searchLearnings(
     query: string,
     paginationParams: PaginationParams
-  ): Observable<HttpResponse<Array<Learning>>> {
+  ): Observable<HttpResponse<LearningResponse>> {
     const params = new HttpParams()
       .set('q', query)
       .set('_page', paginationParams.page)
-      .set('_limit', paginationParams.limit);
+      .set('_per_page', paginationParams.limit);
 
-    return this.http.get<Array<Learning>>(`${this.apiUrl}/learnings`, {
+    return this.http.get<LearningResponse>(`${this.apiUrl}/learnings`, {
       observe: 'response',
       params,
     });

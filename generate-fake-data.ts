@@ -1,7 +1,7 @@
 import { randEmail, randJobTitle, randFullName } from '@ngneat/falso';
 import { Learning, User } from './libs/shared/api-types/src';
 
-const USERS_ROWS_NUMBER = 30;
+const USERS_ROWS_NUMBER = 100;
 const LEARNINGS_ROWS_NUMBER = 500;
 
 const database: { users: Array<User>; learnings: Array<Learning> } = {

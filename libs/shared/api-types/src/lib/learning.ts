@@ -6,3 +6,5 @@ export interface Learning {
   status: Status;
   userId: number;
 }
+
+

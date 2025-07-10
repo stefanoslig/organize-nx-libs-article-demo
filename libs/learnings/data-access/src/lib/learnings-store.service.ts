@@ -38,8 +38,8 @@ export class LearningsStoreService extends Store<LearningsState> {
       .subscribe((response) =>
         this.setState({
           ...this.state,
-          learnings: response.body ?? [],
-          paginationTotalCount: +(response.headers.get('X-Total-Count') ?? 0),
+          learnings: response.body?.data ?? [],
+          paginationTotalCount: +(response.body?.pages ?? 0),
         })
       );
   }
@@ -54,8 +54,8 @@ export class LearningsStoreService extends Store<LearningsState> {
       .subscribe((response) =>
         this.setState({
           ...this.state,
-          learnings: response.body ?? [],
-          paginationTotalCount: +(response.headers.get('X-Total-Count') ?? 0),
+          learnings: response.body?.data ?? [],
+          paginationTotalCount: +(response.body?.pages ?? 0),
           searching: false,
         })
       );
