@@ -4,7 +4,7 @@
   "projectType": "library",
   "sourceRoot": "libs/users/data-access/src",
   "prefix": "abc",
-  "tags": [],
+  "tags": ["type:data-access", "scope:users"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",

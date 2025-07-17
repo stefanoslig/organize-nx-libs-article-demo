@@ -4,7 +4,7 @@
   "projectType": "library",
   "sourceRoot": "libs/shared/ui/src",
   "prefix": "abc",
-  "tags": [],
+  "tags": ["type:ui", "scope:shared"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",

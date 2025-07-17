@@ -4,7 +4,7 @@
   "projectType": "library",
   "sourceRoot": "libs/users/feature-list/src",
   "prefix": "abc",
-  "tags": [],
+  "tags": ["type:feature", "scope:users"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",

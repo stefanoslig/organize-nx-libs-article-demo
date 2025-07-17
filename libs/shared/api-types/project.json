@@ -4,7 +4,7 @@
   "projectType": "library",
   "sourceRoot": "libs/shared/api-types/src",
   "prefix": "abc",
-  "tags": [],
+  "tags": ["type:model", "scope:shared"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",

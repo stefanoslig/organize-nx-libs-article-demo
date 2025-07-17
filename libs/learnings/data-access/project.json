@@ -4,7 +4,7 @@
   "projectType": "library",
   "sourceRoot": "libs/learnings/data-access/src",
   "prefix": "abc",
-  "tags": [],
+  "tags": ["type:data-access", "scope:learnings"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",

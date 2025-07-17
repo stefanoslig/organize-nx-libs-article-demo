@@ -4,7 +4,7 @@
   "projectType": "library",
   "sourceRoot": "libs/learnings/feature-list/src",
   "prefix": "abc",
-  "tags": [],
+  "tags": ["type:feature", "scope:learnings"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",

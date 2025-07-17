@@ -4,7 +4,7 @@
   "projectType": "library",
   "sourceRoot": "libs/users/utils-testing/src",
   "prefix": "abc",
-  "tags": [],
+  "tags": ["type:utils", "scope:users"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",

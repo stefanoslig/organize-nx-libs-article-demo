@@ -4,7 +4,7 @@
   "projectType": "library",
   "sourceRoot": "libs/shared/data-access/src",
   "prefix": "abc",
-  "tags": [],
+  "tags": ["type:data-access", "scope:shared"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
