@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Learning, PaginationParams } from '@abc/shared/model';
+import { Learning, PaginationParams, UserEmbedLeanings } from '@abc/shared/model';
 import { LearningResponse } from '@abc/learnings/model';
 import { API_URL } from '@abc/shared/data-access';
 
@@ -50,4 +50,12 @@ export class LearningsApiService {
       userId,
     });
   }
+
+  fetchUsersWithLearnings(): Observable<Array<UserEmbedLeanings>> {
+      const params = new HttpParams().set('_embed', 'learnings');
+  
+      return this.http.get<Array<UserEmbedLeanings>>(`${this.apiUrl}/users`, {
+        params,
+      });
+    }
 }

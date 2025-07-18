@@ -1,1 +1,1 @@
-export {User, UserEmbedLeanings} from './lib/user';
+export {User} from './lib/user';

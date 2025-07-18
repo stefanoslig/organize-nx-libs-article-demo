@@ -1,4 +1,4 @@
-import { Learning } from '@abc/shared/api-types';
+import { Learning } from '@abc/shared/model';
 
 export const learnings: Array<Learning> = [
   {

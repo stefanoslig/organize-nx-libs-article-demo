@@ -17,7 +17,7 @@
       </div>
       <abc-dropdown #dropdown>
         <ul>
-          @for (user of users$ | async; track user) {
+          @for (user of usersWithLearnings$ | async; track user) {
             <li class="list-item-dropdown">
               <span
                 (click)="assignLearning(learning.id, user.id)"

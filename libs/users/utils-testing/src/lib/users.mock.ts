@@ -1,4 +1,4 @@
-import { UserEmbedLeanings } from "@abc/shared/api-types";
+import { UserEmbedLeanings } from "@abc/shared/model";
 
 export const users: Array<UserEmbedLeanings> = [
   {

@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, inject } from '@angular/core';
 import { LearningsStoreService } from '@abc/learnings/data-access';
-import { UsersStoreService } from '@abc/users/data-access';
 import { PaginationParams } from '@abc/shared/model';
 import { DropdownComponent, DropdownTriggerDirective, PaginationComponent } from '@abc/shared/ui';
 import { AsyncPipe, NgClass } from '@angular/common';
@@ -10,23 +9,23 @@ import { AsyncPipe, NgClass } from '@angular/common';
   templateUrl: './learnings-list.component.html',
   styleUrls: ['./learnings-list.component.scss'],
   imports: [
-        AsyncPipe, NgClass,
-        DropdownComponent,
-        PaginationComponent,
-        DropdownTriggerDirective
-            ],
+    AsyncPipe, 
+    NgClass,
+    DropdownComponent,
+    PaginationComponent,
+    DropdownTriggerDirective
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LearningsListComponent implements OnInit {
   private readonly learningsStoreService = inject(LearningsStoreService);
-  private readonly usersStoreService = inject(UsersStoreService);
 
   learnings$ = this.learningsStoreService.learnings$;
-  users$ = this.usersStoreService.users$;
+  usersWithLearnings$ = this.learningsStoreService.usersWithLearnings$;
   paginationTotalCount$ = this.learningsStoreService.paginationTotalCount$;
 
   ngOnInit() {
-    this.usersStoreService.fetchUsers();
+    this.learningsStoreService.fetchUsersWithLearnings();
   }
 
   deleteLearning(id: number) {

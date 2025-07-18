@@ -1,4 +1,4 @@
-import { Learning, PaginationParams } from '@abc/shared/model';
+import { Learning, PaginationParams, UserEmbedLeanings } from '@abc/shared/model';
 import { Store } from '@abc/shared/data-access';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs';
@@ -8,12 +8,14 @@ export interface LearningsState {
   learnings: Array<Learning>;
   searching: boolean;
   paginationTotalCount: number;
+  users: Array<UserEmbedLeanings>;
 }
 
 const initialState: LearningsState = {
   learnings: [],
   searching: false,
   paginationTotalCount: 0,
+  users: []
 };
 
 @Injectable({
@@ -23,6 +25,7 @@ export class LearningsStoreService extends Store<LearningsState> {
   private learningsApiService = inject(LearningsApiService);
 
   learnings$ = this.state$.pipe(map((state) => state.learnings));
+  usersWithLearnings$ = this.state$.pipe(map((state) => state.users));
   searching$ = this.state$.pipe(map((state) => state.searching));
   paginationTotalCount$ = this.state$.pipe(
     map((state) => state.paginationTotalCount)
@@ -90,5 +93,14 @@ export class LearningsStoreService extends Store<LearningsState> {
           }),
         });
       });
+  }
+
+  fetchUsersWithLearnings() {
+    this.learningsApiService.fetchUsersWithLearnings().subscribe((users) =>
+      this.setState({
+        ...this.state,
+        users,
+      })
+    );
   }
 }

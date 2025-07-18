@@ -1,4 +1,5 @@
-import { User, UserEmbedLeanings } from '@abc/users/model';
+import { User } from '@abc/users/model';
+import { UserEmbedLeanings } from '@abc/shared/model';
 import { Store } from '@abc/shared/data-access';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs';

@@ -1,17 +1,16 @@
-import { UsersApiService } from '@abc/users/data-access';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { users } from './users.mock';
 
 @Injectable()
-export class UsersApiServiceMock extends UsersApiService {
-  override fetchUsers() {
+export class UsersApiServiceMock {
+  fetchUsers() {
     return of(users);
   }
-  override searchUsers() {
+  searchUsers() {
     return of([users[1]]);
   }
-  override deleteUser() {
+  deleteUser() {
     return of(void 0) as Observable<void>;
   }
 }
