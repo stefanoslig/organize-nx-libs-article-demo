@@ -5,9 +5,9 @@ import {
   AddUserModalComponent,
   ModalData,
 } from './add-user-modal/add-user-modal.component';
-import { User } from '@abc/shared/api-types';
 import { filter, take } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
+import { User } from '@abc/users/model';
 
 @Component({
   selector: 'abc-users-search',

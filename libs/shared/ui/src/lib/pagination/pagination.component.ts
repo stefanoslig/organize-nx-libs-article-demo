@@ -1,4 +1,4 @@
-import { PaginationParams } from '@abc/shared/api-types';
+import { PaginationParams } from '@abc/shared/model';
 import { Component, ChangeDetectionStrategy, Output, EventEmitter, OnInit, Input, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, Subject, takeUntil, tap } from 'rxjs';

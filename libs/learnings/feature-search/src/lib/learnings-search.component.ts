@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { PAGINATION_PARAMS, SearchBarComponent } from '@abc/shared/ui';
 import { LearningsStoreService } from '@abc/learnings/data-access';
 import { Router } from '@angular/router';
-import { PaginationParams } from '@abc/shared/api-types';
+import { PaginationParams } from '@abc/shared/model';
 import { AsyncPipe } from '@angular/common';
 
 @Component({

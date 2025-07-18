@@ -3,7 +3,7 @@ import { AsyncPipe } from '@angular/common';
 import { UsersStoreService } from '@abc/users/data-access';
 import { AvatarComponent, ModalService } from '@abc/shared/ui';
 import { AssignedLearningsModalComponent } from './assigned-learnings-modal/assigned-learnings-modal.component';
-import { Learning } from '@abc/shared/api-types';
+import { Learning } from '@abc/shared/model';
 
 @Component({
   selector: 'abc-users-list',

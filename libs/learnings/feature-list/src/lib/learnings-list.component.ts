@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, inject } from '@angular/core';
 import { LearningsStoreService } from '@abc/learnings/data-access';
 import { UsersStoreService } from '@abc/users/data-access';
-import { PaginationParams } from '@abc/shared/api-types';
+import { PaginationParams } from '@abc/shared/model';
 import { DropdownComponent, DropdownTriggerDirective, PaginationComponent } from '@abc/shared/ui';
 import { AsyncPipe, NgClass } from '@angular/common';
 

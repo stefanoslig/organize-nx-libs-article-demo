@@ -1,4 +1,4 @@
-import { Learning, PaginationParams } from '@abc/shared/api-types';
+import { Learning, PaginationParams } from '@abc/shared/model';
 import { Store } from '@abc/shared/data-access';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs';

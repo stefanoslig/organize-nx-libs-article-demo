@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User, UserEmbedLeanings } from '@abc/shared/api-types';
+import { User, UserEmbedLeanings } from '@abc/users/model';
 import { API_URL } from '@abc/shared/data-access';
 
 @Injectable({

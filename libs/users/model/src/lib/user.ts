@@ -1,4 +1,4 @@
-import { Learning } from '..';
+import { Learning } from '@abc/shared/model';
 
 export interface User {
   id: number;

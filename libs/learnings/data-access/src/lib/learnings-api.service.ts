@@ -1,7 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Learning, LearningResponse, PaginationParams } from '@abc/shared/api-types';
+import { Learning, PaginationParams } from '@abc/shared/model';
+import { LearningResponse } from '@abc/learnings/model';
 import { API_URL } from '@abc/shared/data-access';
 
 @Injectable({

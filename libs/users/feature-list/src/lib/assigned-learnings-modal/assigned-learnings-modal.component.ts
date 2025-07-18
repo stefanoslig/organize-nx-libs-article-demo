@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 
 import { ModalRef, MODAL_DATA } from '@abc/shared/ui';
-import { Learning } from '@abc/shared/api-types';
+import { Learning } from '@abc/shared/model';
 
 @Component({
   selector: 'abc-assigned-learnings-modal',

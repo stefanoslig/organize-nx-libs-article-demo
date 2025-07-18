@@ -1,4 +1,4 @@
-import { Learning } from "./learning";
+import { Learning } from "@abc/shared/model";
 
 export interface LearningResponse {
     data: Array<Learning>;

@@ -35,7 +35,10 @@
       "@abc/users/feature-list": ["libs/users/feature-list/src/index.ts"],
       "@abc/users/feature-search": ["libs/users/feature-search/src/index.ts"],
       "@abc/users/feature-shell": ["libs/users/feature-shell/src/index.ts"],
-      "@abc/users/utils-testing": ["libs/users/utils-testing/src/index.ts"]
+      "@abc/users/utils-testing": ["libs/users/utils-testing/src/index.ts"],
+      "@abc/learnings/model": ["libs/learnings/model/src/index.ts"],
+      "@abc/shared/model": ["libs/shared/model/src/index.ts"],
+      "@abc/users/model": ["libs/users/model/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
