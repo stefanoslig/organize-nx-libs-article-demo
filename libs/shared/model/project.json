@@ -4,7 +4,7 @@
   "sourceRoot": "libs/shared/model/src",
   "prefix": "lib",
   "projectType": "library",
-  "tags": [],
+  "tags": ["scope:shared", "type:model"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
