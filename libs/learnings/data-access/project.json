@@ -1,5 +1,5 @@
 {
-  "name": "data-access",
+  "name": "abc-learnings-data-access",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/learnings/data-access/src",

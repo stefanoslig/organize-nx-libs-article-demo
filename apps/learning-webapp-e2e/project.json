@@ -3,7 +3,8 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/learning-webapp-e2e/src",
   "projectType": "application",
-  "tags": ["type:app-e2e"],
+  "tags": ["scope:learning-webapp", "type:app"],
+  "implicitDependencies": ["learning-webapp"],
   "targets": {
     "e2e": {
       "executor": "@nx/cypress:cypress",

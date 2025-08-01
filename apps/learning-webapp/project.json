@@ -4,7 +4,7 @@
   "projectType": "application",
   "sourceRoot": "apps/learning-webapp/src",
   "prefix": "abc",
-  "tags": ["type:app"],
+  "tags": ["scope:learning-webapp", "type:app"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
