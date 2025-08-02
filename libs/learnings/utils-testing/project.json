@@ -4,7 +4,7 @@
   "projectType": "library",
   "sourceRoot": "libs/learnings/utils-testing/src",
   "prefix": "abc",
-  "tags": ["type:utils", "scope:learnings"],
+  "tags": ["type:util", "scope:learnings"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",

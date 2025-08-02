@@ -23,7 +23,7 @@
               },
               {
                 "sourceTag": "type:app",
-                "onlyDependOnLibsWithTags": ["type:shell", "scope:shared"]
+                "onlyDependOnLibsWithTags": ["type:shell", "type:model"]
               },
               {
                 "sourceTag": "scope:learnings",
@@ -35,19 +35,27 @@
               },
               {
                 "sourceTag": "type:shell",
-                "onlyDependOnLibsWithTags": ["type:shell"]
+                "onlyDependOnLibsWithTags": ["type:shell", "type:model", "type:feature"]
               },
               {
                 "sourceTag": "type:util",
+                "onlyDependOnLibsWithTags": ["type:model", "type:util"]
+              },
+              {
+                "sourceTag": "type:model",
                 "onlyDependOnLibsWithTags": ["type:model"]
               },
               {
                 "sourceTag": "type:data-access",
-                "onlyDependOnLibsWithTags": ["type:util", "type:model"]
+                "onlyDependOnLibsWithTags": ["type:util", "type:model", "type:data-access"]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": ["type:util", "type:model", "type:ui"]
               },
               {
                 "sourceTag": "type:feature",
-                "onlyDependOnLibsWithTags": ["type:feature", "type:model", "type:data-access"]
+                "onlyDependOnLibsWithTags": ["type:feature", "type:model", "type:data-access", "type:ui", "type:util"]
               }
             ]
           }

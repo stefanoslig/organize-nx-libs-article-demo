@@ -1,4 +1,4 @@
-import { API_URL } from '@abc/shared/data-access';
+import { API_URL } from '@abc/shared/model';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { LearningsApiService } from './learnings-api.service';

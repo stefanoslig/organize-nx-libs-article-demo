@@ -1,7 +1,7 @@
 <abc-search-bar
   class="search"
   [searching]="(searching$ | async) ?? false"
-  (search)="onSearch($event)"
+  (searchEvent)="onSearch($event)"
 ></abc-search-bar>
 
 <button (click)="openAddUser()">Add user +</button>

@@ -3,7 +3,7 @@ import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Learning, PaginationParams, UserEmbedLeanings } from '@abc/shared/model';
 import { LearningResponse } from '@abc/learnings/model';
-import { API_URL } from '@abc/shared/data-access';
+import { API_URL } from '@abc/shared/model';
 
 @Injectable({
   providedIn: 'root',

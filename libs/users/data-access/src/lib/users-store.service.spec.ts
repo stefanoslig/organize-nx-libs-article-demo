@@ -4,7 +4,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { UsersApiService } from './users-api.service';
 
 import { UsersStoreService } from './users-store.service';
-import { API_URL } from '@abc/shared/data-access';
+import { API_URL } from '@abc/shared/model';
 
 describe('UsersStoreService', () => {
   let service: UsersStoreService;

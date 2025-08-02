@@ -2,7 +2,7 @@ import {
   learnings,
   LearningsApiServiceMock,
 } from '@abc/learnings/utils-testing';
-import { API_URL } from '@abc/shared/data-access';
+import { API_URL } from '@abc/shared/model';
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { LearningsApiService } from './learnings-api.service';

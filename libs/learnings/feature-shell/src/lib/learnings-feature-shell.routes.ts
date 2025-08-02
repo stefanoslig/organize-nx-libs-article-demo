@@ -1,6 +1,6 @@
 
 import { Route } from '@angular/router';
-import { PAGINATION_PARAMS } from '@abc/shared/ui';
+import { PAGINATION_PARAMS } from '@abc/shared/model';
 
 export const LearningsRoutes: Route[] = [
       {

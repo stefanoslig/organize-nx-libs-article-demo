@@ -20,7 +20,7 @@ import { map, takeUntil, tap, filter } from 'rxjs/operators';
 })
 export class SearchBarComponent implements AfterViewInit, OnDestroy {
   @Input() searching = false;
-  @Output() search = new EventEmitter<string>();
+  @Output() searchEvent = new EventEmitter<string>();
   @Output() resetSearch = new EventEmitter<void>();
   @ViewChild('searchField', { static: false }) searchField!: ElementRef;
   unsubscribe$ = new Subject<void>();
@@ -39,7 +39,7 @@ export class SearchBarComponent implements AfterViewInit, OnDestroy {
   }
 
   searchOnEnter(event: Event) {
-    this.search.emit(
+    this.searchEvent.emit(
       ((event as KeyboardEvent).target as HTMLInputElement).value
     );
   }

@@ -1,5 +1,5 @@
 <abc-search-bar class="search"
   [searching]="(searching$ | async) ?? false"
-  (search)="onSearch($event)"
+  (searchEvent)="onSearch($event)"
   (resetSearch)="onResetSearch()"
  />

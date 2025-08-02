@@ -1,8 +1,7 @@
-import { PaginationParams } from '@abc/shared/model';
+import { PAGINATION_PARAMS, PaginationParams } from '@abc/shared/model';
 import { Component, ChangeDetectionStrategy, Output, EventEmitter, OnInit, Input, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, Subject, takeUntil, tap } from 'rxjs';
-import { PAGINATION_PARAMS } from './pagination.token';
 
 @Component({
   selector: 'abc-pagination',

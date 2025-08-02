@@ -1,9 +1,10 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
-import { PAGINATION_PARAMS, SearchBarComponent } from '@abc/shared/ui';
+import { PAGINATION_PARAMS } from '@abc/shared/model';
 import { LearningsStoreService } from '@abc/learnings/data-access';
 import { Router } from '@angular/router';
 import { PaginationParams } from '@abc/shared/model';
 import { AsyncPipe } from '@angular/common';
+import { SearchBarComponent } from '@abc/shared/ui';
 
 @Component({
   selector: 'abc-learnings-search',
