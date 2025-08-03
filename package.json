@@ -9,7 +9,10 @@
     "build": "nx build",
     "test": "nx test",
     "server": "npx json-server --watch db.json --port 3000",
-    "generate-data": "npx tsx generate-fake-data.ts > db.json"
+    "generate-data": "npx tsx generate-fake-data.ts > db.json",
+    "depcruise:check": "depcruise apps/*/src libs/*/src --exclude '^node_modules'",
+    "depcruise:report": "depcruise apps/*/src libs/*/src --exclude '^(node_modules|apps/.+-e2e)' --output-type err-html > dependency-report.html",
+    "depcruise:graph": "depcruise apps/*/src libs/*/src --exclude '^(node_modules|apps/.+-e2e)' --output-type dot | dot -Tsvg | npx depcruise-wrap-stream-in-html > dependency-graph.html"
   },
   "private": true,
   "dependencies": {
@@ -55,6 +58,7 @@
     "@typescript-eslint/utils": "^7.16.0",
     "autoprefixer": "^10.4.0",
     "cypress": "14.5.1",
+    "dependency-cruiser": "^17.0.0",
     "eslint": "8.57.1",
     "eslint-config-prettier": "10.1.5",
     "eslint-plugin-cypress": "2.15.2",

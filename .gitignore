@@ -42,3 +42,7 @@ Thumbs.db
 
 .nx/cache
 .nx/workspace-data
+
+# dependency cruiser output
+dependency-graph.html
+dependency-report.html
