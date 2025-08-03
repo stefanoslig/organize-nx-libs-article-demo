@@ -1,16 +1,16 @@
 {
-  "name": "abc-users-feature-shell",
+  "name": "abc-users-shell",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/users/feature-shell/src",
+  "sourceRoot": "libs/users/shell/src",
   "prefix": "abc",
   "tags": ["type:shell", "scope:users"],  
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/libs/users/feature-shell"],
+      "outputs": ["{workspaceRoot}/coverage/libs/users/shell"],
       "options": {
-        "jestConfig": "libs/users/feature-shell/jest.config.js"
+        "jestConfig": "libs/users/shell/jest.config.js"
       }
     },
     "lint": {

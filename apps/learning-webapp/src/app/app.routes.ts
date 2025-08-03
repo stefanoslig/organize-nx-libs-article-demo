@@ -9,14 +9,14 @@ export const appRoutes: Route[] = [
       {
         path: 'users',
         loadChildren: () =>
-          import('@abc/users/feature-shell').then(
+          import('@abc/users/shell').then(
             (m) => m.UsersRoutes
           ),
       },
       {
         path: 'learnings',
         loadChildren: () =>
-          import('@abc/learnings/feature-shell').then(
+          import('@abc/learnings/shell').then(
             (m) => m.LearningsRoutes
           ),
       },
