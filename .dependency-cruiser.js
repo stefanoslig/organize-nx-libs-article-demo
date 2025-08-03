@@ -101,7 +101,7 @@ module.exports = {
         path: '^libs/'                
       },
       module: {
-        path: '^libs/shared/(?:data-access|ui|model)/src/index\\.(?:ts|tsx|js|jsx)$',
+        path: '^libs/shared/(?:data-access|ui|model)/src/index.ts$',
         numberOfDependentsLessThan: 2
       }
     },
