@@ -93,6 +93,19 @@ module.exports = {
       },
     },
     {
+      name: 'no-unshared-lib',
+      comment:
+        'Each shared lib’s index.ts must be imported by at least two other first-level libs',
+      severity: 'error',
+      from: {
+        path: '^libs/'                
+      },
+      module: {
+        path: '^libs/shared/(?:data-access|ui|model)/src/index\\.(?:ts|tsx|js|jsx)$',
+        numberOfDependentsLessThan: 2
+      }
+    },
+    {
       name: 'feature-lib-restricted-deps',
       comment:
         'Libraries of type feature should depend only on libs of type feature',
