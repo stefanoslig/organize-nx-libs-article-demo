@@ -9,7 +9,8 @@
     "build": "nx build",
     "test": "nx test",
     "server": "npx json-server --watch db.json --port 3000",
-    "generate-data": "npx tsx generate-fake-data.ts > db.json"
+    "generate-data": "npx tsx generate-fake-data.ts > db.json",
+    "sheriff:verify": "npx sheriff verify"
   },
   "private": true,
   "dependencies": {
@@ -45,6 +46,8 @@
     "@nx/js": "21.2.2",
     "@nx/workspace": "21.2.2",
     "@schematics/angular": "20.0.5",
+    "@softarc/eslint-plugin-sheriff": "^0.19.0",
+    "@softarc/sheriff-core": "^0.19.0",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",

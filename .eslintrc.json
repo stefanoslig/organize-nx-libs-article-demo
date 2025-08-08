@@ -72,7 +72,7 @@
     },
     {
       "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nx/javascript"],
+      "extends": ["plugin:@nx/javascript", "plugin:@softarc/sheriff/legacy"],
       "rules": {
         "@typescript-eslint/no-extra-semi": "error",
         "no-extra-semi": "off"

@@ -28,7 +28,6 @@
       "@abc/learnings/utils-testing": [
         "libs/learnings/utils-testing/src/index.ts"
       ],
-      "@abc/shared/api-types": ["libs/shared/api-types/src/index.ts"],
       "@abc/shared/data-access": ["libs/shared/data-access/src/index.ts"],
       "@abc/shared/ui": ["libs/shared/ui/src/index.ts"],
       "@abc/users/data-access": ["libs/users/data-access/src/index.ts"],
