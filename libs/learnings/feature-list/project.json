@@ -1,5 +1,5 @@
 {
-  "name": "abc-learnings-feature-list",
+  "name": "learnings-feature-list",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/learnings/feature-list/src",

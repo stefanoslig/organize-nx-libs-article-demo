@@ -1,5 +1,5 @@
 {
-  "name": "abc-learnings-shell",
+  "name": "learnings-shell",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/learnings/shell/src",

@@ -1,5 +1,5 @@
 {
-  "name": "abc-shared-model",
+  "name": "shared-model",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared/model/src",
   "prefix": "lib",

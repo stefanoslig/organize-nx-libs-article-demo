@@ -1,5 +1,5 @@
 {
-  "name": "abc-learnings-utils-testing",
+  "name": "learnings-utils-testing",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/learnings/utils-testing/src",

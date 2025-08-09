@@ -1,5 +1,5 @@
 {
-  "name": "abc-learnings-feature-search",
+  "name": "learnings-feature-search",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/learnings/feature-search/src",

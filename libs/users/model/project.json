@@ -1,5 +1,5 @@
 {
-  "name": "abc-users-model",
+  "name": "users-model",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/users/model/src",
   "prefix": "lib",
