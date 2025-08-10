@@ -144,6 +144,7 @@ module.exports = {
           '(^|/)[.][^/]+[.](?:js|cjs|mjs|ts|cts|mts|json)$',                  // dot files
           '[.]d[.]ts$',                                                       // TypeScript declaration files
           '(^|/)tsconfig[.]json$',                                            // TypeScript config
+          '(^|/)test-setup.ts|polyfills.ts|environment.prod.ts$',            // Angular related
           '(^|/)(?:babel|webpack)[.]config[.](?:js|cjs|mjs|ts|cts|mts|json)$' // other configs
         ]
       },

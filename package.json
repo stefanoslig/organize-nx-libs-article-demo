@@ -12,7 +12,7 @@
     "generate-data": "npx tsx generate-fake-data.ts > db.json",
     "depcruise:check": "depcruise apps/*/src libs/*/src --exclude '^node_modules'",
     "depcruise:report": "depcruise apps/*/src libs/*/src --exclude '^(node_modules|apps/.+-e2e)' --output-type err-html > dependency-report.html",
-    "depcruise:graph": "depcruise apps/*/src libs/*/src --exclude '^(node_modules|apps/.+-e2e)' --output-type dot | dot -Tsvg | npx depcruise-wrap-stream-in-html > dependency-graph.html"
+    "depcruise:graph": "depcruise apps/*/src libs/*/src --exclude '^(node_modules|apps/.+-e2e)' --output-type ddot | dot -Tsvg | npx depcruise-wrap-stream-in-html > dependency-graph.html"
   },
   "private": true,
   "dependencies": {
