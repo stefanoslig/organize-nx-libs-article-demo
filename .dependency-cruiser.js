@@ -108,7 +108,7 @@ module.exports = {
     {
       name: 'feature-lib-restricted-deps',
       comment:
-        'Libraries of type feature should depend only on libs of type feature',
+        'Libraries of type feature should depend only on every type except shell',
       severity: 'error',
       from: {
         path: '^libs/[^/]+/feature-[^/]+'  
